@@ -11,12 +11,18 @@ public class HealhBar : MonoBehaviour
 
     private Coroutine _activeCoroutine;
 
+    private void OnEnable()
+    {
+        _enemy.ChangingHealth += OnSliderChanged;
+    }
+
     private void Start()
     {
         _slider.maxValue=_enemy.Health;
+        Restart(_slider.maxValue);
     }
 
-    private void Update()
+    public void OnSliderChanged()
     {
         Restart(_enemy.Health);
     }

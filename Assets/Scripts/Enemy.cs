@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public float Health;
+    [SerializeField] private float _health;
     [SerializeField] private float _changeHealthValue;
+    
+    public event UnityAction ChangingHealth;
+
+    public float Health => _health;
 
     public void OnHeal()
     {
-        Health += _changeHealthValue;
+        _health += _changeHealthValue;
+        ChangingHealth.Invoke();
     }
 
     public void OnDamage()
     {
-        Health -= _changeHealthValue;
+        _health -= _changeHealthValue;
+        ChangingHealth.Invoke();
     }
 }
