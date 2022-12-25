@@ -13,7 +13,7 @@ public class HealhBar : MonoBehaviour
 
     private void OnEnable()
     {
-        _enemy.ChangingHealth += OnSliderChanged;
+        _enemy.OnChangingHealth += ChandingHealth;
     }
 
     private void Start()
@@ -22,9 +22,9 @@ public class HealhBar : MonoBehaviour
         Restart(_slider.maxValue);
     }
 
-    public void OnSliderChanged()
+    public void ChandingHealth(float target)
     {
-        Restart(_enemy.Health);
+        Restart(target);
     }
 
     private void Restart(float target)

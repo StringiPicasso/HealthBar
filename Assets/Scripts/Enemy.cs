@@ -8,19 +8,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private float _changeHealthValue;
     
-    public event UnityAction ChangingHealth;
+    public event UnityAction<float> OnChangingHealth;
 
     public float Health => _health;
 
     public void OnHeal()
     {
         _health += _changeHealthValue;
-        ChangingHealth.Invoke();
+        OnChangingHealth?.Invoke(Health);
     }
 
     public void OnDamage()
     {
         _health -= _changeHealthValue;
-        ChangingHealth.Invoke();
+        OnChangingHealth?.Invoke(Health);
     }
 }
