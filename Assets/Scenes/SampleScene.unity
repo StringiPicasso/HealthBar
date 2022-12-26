@@ -292,13 +292,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1319854520}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: OnHeal
-        m_Mode: 1
+        m_MethodName: TakeHeal
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -815,8 +815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6d67090716ba543bf5c9b1b3c3cff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 50
-  _changeHealthValue: 10
+  _maxHealth: 50
+  _minHealth: 0
 --- !u!212 &1319854521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -969,13 +969,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1319854520}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: OnDamage
-        m_Mode: 1
+        m_MethodName: TakeDamage
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

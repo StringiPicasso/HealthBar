@@ -16,10 +16,15 @@ public class HealhBar : MonoBehaviour
         _enemy.OnChangingHealth += ChandingHealth;
     }
 
+    private void OnDisable()
+    {
+        _enemy.OnChangingHealth -= ChandingHealth;
+    }
+
     private void Start()
     {
-        _slider.maxValue=_enemy.Health;
-        Restart(_slider.maxValue);
+        _slider.maxValue=_enemy.MaxHealth;
+        Restart(_enemy.MaxHealth);
     }
 
     public void ChandingHealth(float target)
